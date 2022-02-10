@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-
-import 'home.dart';
+import 'package:haermes_flutter/screens/home.dart';
 
 void main(List<String> args) {
-  runApp(const MyApps());
+  runApp(const Main());
 }
 
-class MyApps extends StatelessWidget {
-  const MyApps({Key? key}) : super(key: key);
+class Main extends StatelessWidget {
+  const Main({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Haermes Flutter',
       theme: ThemeData(
         // This is the theme of your application.
         //
