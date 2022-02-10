@@ -8,16 +8,25 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  void _onPressAdd() {}
+  int counter = 0;
+  void _onPressAdd() {
+    setState(() {
+      counter++;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   title: const Text('Home'),
-      // ),
-      body: const Center(
-        child: Text('This Home screen'),
+      appBar: AppBar(
+        title: const Text('Home'),
+      ),
+      body: Center(
+        child: Text(
+          'Count Value $counter',
+          style: const TextStyle(fontSize: 60),
+          textAlign: TextAlign.center,
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _onPressAdd,
