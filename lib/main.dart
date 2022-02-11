@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:haermes_flutter/screens/home.dart';
 import 'package:haermes_flutter/screens/login.dart';
+import 'package:haermes_flutter/screens/splash.dart';
 
 void main(List<String> args) {
   runApp(const Main());
@@ -26,7 +27,12 @@ class Main extends StatelessWidget {
         primarySwatch: Colors.deepOrange,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: const Login(),
+      home: const Splash(),
+      routes: <String, WidgetBuilder>{
+        'Splash': (BuildContext context) => const Splash(),
+        'Login': (BuildContext context) => const Login(),
+        'Home': (BuildContext context) => const Home(),
+      },
     );
   }
 }
