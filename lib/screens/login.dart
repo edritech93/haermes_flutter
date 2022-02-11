@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:haermes_flutter/screens/configuration.dart';
+import 'package:haermes_flutter/screens/home.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -51,12 +53,23 @@ class _LoginState extends State<Login> {
     }
   }
 
+  void _onPressConfiguration() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const Configuration()),
+    );
+  }
+
+  void _onPressHome() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const Home()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Login'),
-        ),
         body: Container(
             margin: const EdgeInsets.all(16.0),
             child: SingleChildScrollView(
@@ -65,7 +78,7 @@ class _LoginState extends State<Login> {
                   Container(
                     child: const Image(
                         image: AssetImage('assets/images/icon_haermes.png')),
-                    margin: const EdgeInsets.fromLTRB(0, 100, 0, 54),
+                    margin: const EdgeInsets.fromLTRB(0, 150, 0, 54),
                   ),
                   Form(
                       key: _formKey,
@@ -120,6 +133,13 @@ class _LoginState extends State<Login> {
                                 )),
                             margin: const EdgeInsets.only(bottom: 16),
                           ),
+                          // NOTE: for testing only
+                          TextButton(
+                              onPressed: () => _onPressConfiguration(),
+                              child: const Text('Goto Configuration')),
+                          TextButton(
+                              onPressed: () => _onPressHome(),
+                              child: const Text('Goto Home')),
                         ],
                       )),
                 ],

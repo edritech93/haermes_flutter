@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:haermes_flutter/screens/configuration.dart';
 import 'package:haermes_flutter/screens/home.dart';
 import 'package:haermes_flutter/screens/login.dart';
 import 'package:haermes_flutter/screens/splash.dart';
@@ -31,6 +32,7 @@ class Main extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         'Splash': (BuildContext context) => const Splash(),
         'Login': (BuildContext context) => const Login(),
+        'Configuration': (BuildContext context) => const Configuration(),
         'Home': (BuildContext context) => const Home(),
       },
     );
