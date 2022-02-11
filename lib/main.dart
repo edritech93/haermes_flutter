@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:haermes_flutter/screens/home.dart';
+import 'package:haermes_flutter/screens/login.dart';
 
 void main(List<String> args) {
   runApp(const Main());
@@ -22,10 +23,10 @@ class Main extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.deepOrange,
       ),
       // home: const MyHomePage(title: 'Flutter Demo Home Page'),
-      home: const Home(),
+      home: const Login(),
     );
   }
 }
