@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -17,8 +16,6 @@ class _LoginState extends State<Login> {
   @override
   void initState() {
     super.initState();
-    _controllerUsername.text = 'Yudi Edri';
-    _controllerPassword.text = '123qwe';
   }
 
   @override
@@ -62,16 +59,18 @@ class _LoginState extends State<Login> {
                           password = value;
                         })),
               ),
-              Text(
-                'Username = $username',
-                style: const TextStyle(fontSize: 21),
-                textAlign: TextAlign.center,
+              Container(
+                child: ElevatedButton(
+                    onPressed: (() {}),
+                    child: const Text(
+                      'Login',
+                      style: TextStyle(fontSize: 21),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      minimumSize: const Size.fromHeight(50),
+                    )),
+                margin: const EdgeInsets.only(bottom: 16),
               ),
-              Text(
-                'Password = $password',
-                style: const TextStyle(fontSize: 21),
-                textAlign: TextAlign.center,
-              )
             ],
           ),
         ));
