@@ -3,6 +3,8 @@ import 'package:haermes_flutter/screens/configuration.dart';
 import 'package:haermes_flutter/screens/home.dart';
 import 'package:haermes_flutter/services/auth.api.dart';
 
+import '../components/AlertApps.dart';
+
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
 
@@ -46,16 +48,12 @@ class _LoginState extends State<Login> {
 
   void _onPressLogin(BuildContext context) {
     if (_formKey.currentState!.validate()) {
-      // If the form is valid, display a snackbar. In the real world,
-      // you'd often call a server or save the information in a database.
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Processing Data')),
-      );
       AuthApi().login().then((value) {
         print('objLogin = $value');
         _onPressHome();
       }).catchError((error) {
         print(error);
+        showAlert(context, error.toString(), null);
       });
     }
   }
