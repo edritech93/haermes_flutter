@@ -61,10 +61,10 @@ class _LoginState extends State<Login> {
   }
 
   void _onPressHome() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => const Home()),
-    );
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => const Home()),
+        (route) => false);
   }
 
   @override
