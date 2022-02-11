@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:haermes_flutter/screens/configuration.dart';
 import 'package:haermes_flutter/screens/home.dart';
+import 'package:haermes_flutter/services/auth.api.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -50,6 +51,12 @@ class _LoginState extends State<Login> {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Processing Data')),
       );
+      AuthApi().login().then((value) {
+        print('objLogin = $value');
+        _onPressHome();
+      }).catchError((error) {
+        print(error);
+      });
     }
   }
 
