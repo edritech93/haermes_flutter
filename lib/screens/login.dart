@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:haermes_flutter/screens/configuration.dart';
 import 'package:haermes_flutter/screens/home.dart';
-import 'package:haermes_flutter/services/auth.api.dart';
+import 'package:haermes_flutter/services/api.dart';
 
 import '../components/AlertApps.dart';
 
